@@ -7,7 +7,6 @@ RUN npm ci --silent
 
 COPY . .
 
-# VITE_API_BASE_URL is injected at build time via --build-arg
 ARG VITE_API_BASE_URL
 ENV VITE_API_BASE_URL=$VITE_API_BASE_URL
 
@@ -17,15 +16,21 @@ RUN npm run build
 FROM nginx:alpine
 WORKDIR /usr/share/nginx/html
 
-# Remove default nginx page
 RUN rm -rf ./*
 
-# Copy built React app
 COPY --from=build /app/dist .
 
-# Copy Nginx config
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Copy nginx template (uses $PORT via envsubst)
+COPY nginx.conf /etc/nginx/templates/default.conf.template
+
+# Remove default nginx config
+RUN rm -f /etc/nginx/conf.d/default.conf
+
+# Railway sets PORT — default to 80 if not set
+ENV PORT=80
 
 EXPOSE 80
 
+# nginx docker image runs envsubst on /etc/nginx/templates/*.template
+# automatically — this is built into the official nginx:alpine image
 CMD ["nginx", "-g", "daemon off;"]
