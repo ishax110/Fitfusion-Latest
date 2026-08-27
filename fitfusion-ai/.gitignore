@@ -12,7 +12,8 @@ build/
 *.egg-info/
 
 # Models (large binary files)
-models/*.joblib
+# .joblib files are committed so Railway Docker build can access them
+# If the model grows beyond 100MB, switch to Git LFS
 
 # IDE
 .vscode/
