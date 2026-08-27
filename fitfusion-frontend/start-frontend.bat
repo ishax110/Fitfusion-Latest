@@ -1,0 +1,3 @@
+@echo off
+echo Starting FitFusion Frontend on port 5173...
+npm run dev

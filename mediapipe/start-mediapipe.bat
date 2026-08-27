@@ -1,0 +1,3 @@
+@echo off
+echo Starting FitFusion MediaPipe Service on port 8001...
+venv\Scripts\python.exe -m uvicorn app.main:app --port 8001

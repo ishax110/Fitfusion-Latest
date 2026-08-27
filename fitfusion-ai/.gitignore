@@ -1,0 +1,19 @@
+# Environment variables — never commit this
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+venv/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# Models (large binary files)
+models/*.joblib
+
+# IDE
+.vscode/
+.idea/

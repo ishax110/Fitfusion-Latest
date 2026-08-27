@@ -1,0 +1,53 @@
+# ── Environment secrets ──────────────────────────────
+.env
+.env.local
+.env.production
+.env.development
+
+# ── Python ────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+dist/
+build/
+
+# ── Java / Maven ──────────────────────────────────────
+target/
+*.class
+*.jar
+*.war
+*.ear
+.mvn/wrapper/maven-wrapper.jar
+
+# ── Node / Frontend ───────────────────────────────────
+node_modules/
+dist/
+.vite/
+build_log.txt
+
+# ── IDE ───────────────────────────────────────────────
+.idea/
+.vscode/
+*.iml
+*.suo
+*.user
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Docker ────────────────────────────────────────────
+.docker/
+
+# ── ML models (large binary — store in cloud storage) ─
+# Comment out if you want to commit the model
+# fitfusion-ai/models/*.joblib
+
+# ── Logs ─────────────────────────────────────────────
+*.log
+build_output.txt
+run_output.txt
