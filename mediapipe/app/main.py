@@ -59,6 +59,10 @@ def get_tracker(exercise: str):
 def home():
     return {"message": "FitFusion MediaPipe Service v2.0 Running"}
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 
 # ── Live webcam workout (existing endpoint — unchanged) ───────────────────
 
