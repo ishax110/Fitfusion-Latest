@@ -57,6 +57,9 @@ export default function Index() {
                   Start Your Journey <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
+              <Link to="/profile">
+                <Button variant="outline" size="xl">Create Profile</Button>
+              </Link>
               <Link to="/login">
                 <Button variant="outline" size="xl">Sign In</Button>
               </Link>

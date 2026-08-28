@@ -10,10 +10,12 @@ import com.fitfusion.fitfusion_backend.repository.UserRepository;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.UUID;
 
 @Service
+@Transactional
 public class FitnessProfileServiceImpl implements FitnessProfileService {
     private final FitnessProfileRepository profileRepository;
     private final UserRepository userRepository;
